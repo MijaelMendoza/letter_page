@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Background with Letter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Fondo de burbujas -->
+    <div class="bubbles-container">
+        <div class="bubbles"></div>
+    </div>
+
+    <!-- Carta sobre el fondo animado -->
+    <div class="card-container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Querida Ana Laura,</strong>
+                        <p>
+                            Quiero expresarte mi admiración y gratitud por haber compartido tu historia y perspectivas
+                            tan generosamente. Es evidente que cada paso de tu vida ha sido marcado por un compromiso
+                            auténtico hacia el arte, el aprendizaje y el apoyo a los demás. A lo largo de los años, has
+                            cultivado la empatía y la dedicación, no solo en tu propio desarrollo personal, sino también
+                            en la ayuda a quienes te rodean, ya sea en lo académico, el teatro o en el simple acto de
+                            ser un apoyo constante para tus amigos y seres queridos.
+
+                            Tu visión sobre la comunicación social como un motor de cambio es inspiradora y refleja una
+                            profunda responsabilidad y amor por Bolivia. Estoy seguro de que tu deseo de acercar el arte
+                            a otros y de contribuir a una sociedad más educada y consciente resonará en aquellos a
+                            quienes tocas con tus acciones y tus palabras.
+
+                            Y nuevamente gracias por compartir una parte de ti. Te deseo todo el
+                            éxito en tu camino y en los sueños que aspiras alcanzar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="diamond">
+                <img src="image.png" alt="Sello" class="diamond-img">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script para burbujas
+        const container = document.querySelector('.bubbles');
+        for (let i = 0; i < 200; i++) {
+            const span = document.createElement('span');
+            const randomValue = Math.floor(Math.random() * 26) + 1;
+            const randomLeft = Math.floor(Math.random() * 100);
+            span.style.setProperty('--i', randomValue);
+            span.style.left = `${randomLeft}%`;
+            container.appendChild(span);
+        }
+
+        // Script para animación de la carta
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
+</body>
+
+</html>
